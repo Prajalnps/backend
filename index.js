@@ -5,6 +5,10 @@ const express = require('express') //it is a require module syntax, you can use 
 const app = express()
 const port = process.env.PORT
 
+const gitHubData = {
+    'username': 'Prajaldev25'
+}
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
@@ -23,6 +27,11 @@ app.get('/login', (req, res) => {
 //more route
 app.get('/youtube', (req, res) => {
     res.send(`<h2>Prajal's Youtube Channel</h2>`)
+})
+
+//github data route
+app.get('/github', (req, res) => {
+    res.json(gitHubData)
 })
 
 app.listen(port, () => {
